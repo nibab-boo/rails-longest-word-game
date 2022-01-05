@@ -1,0 +1,10 @@
+<h1>SEE YOUR SCORE HERE!</h2>
+<% if @comment == "out_of_grid" %>
+  <p class="comment">Sorry but <strong><%= @word %></strong> can't be built out of <%= @grid.join(",") %></p>
+<% elsif @comment == "invalid" %>
+  <p class="comment">Sorry but <strong><%= @word %></strong> is not a valid English word.</p>
+<% else %>
+  <p class="comment">Congratulations! <strong><%= @word %></strong> is a valid English word.</p>
+  <p>time taken : <%= @time_diff %></p>
+  <p>score : <%= @score %></p>
+<% end %>
