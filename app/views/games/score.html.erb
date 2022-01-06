@@ -5,6 +5,6 @@
   <p class="comment">Sorry but <strong><%= @word %></strong> is not a valid English word.</p>
 <% else %>
   <p class="comment">Congratulations! <strong><%= @word %></strong> is a valid English word.</p>
-  <p>time taken : <%= @time_diff %></p>
-  <p>score : <%= @score %></p>
+  <p class="extra_info">time taken : <%= @time_diff %></p>
+  <p class="extra_info">score : <%= @score %></p>
 <% end %>

@@ -5,3 +5,45 @@
 #comment {
   font-size: 2em;
 }
+
+.letter {
+  display: inline-block;
+  padding: 8px;
+  width: 24px;
+  text-align: center;
+  margin: 9px;
+  font-weight: bold;
+  background-color: antiquewhite;
+}
+form {
+  position: relative;
+  height: 34px;
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid black;
+  width: 40vw;
+}
+
+input {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 16px;
+  // padding: 4px;
+  border: none;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+}
+
+.submit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(132, 96, 168);
+}
+input[type="text"]:focus  {
+  box-shadow: 0px 0px 8px blueviolet;
+}
