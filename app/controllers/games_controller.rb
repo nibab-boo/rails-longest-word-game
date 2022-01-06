@@ -11,8 +11,8 @@ class GamesController < ApplicationController
 
   def score
     letters = params[:token].chars
-    @grid = letters.clone
     @word = params[:word].upcase
+    @grid = letters.clone
     test_word = @word.chars
     # check if the word is made up of grid
     @word.chars.each_with_index do |element, index|
@@ -27,14 +27,13 @@ class GamesController < ApplicationController
     url = "https://wagon-dictionary.herokuapp.com/#{@word}"
     word_serialized = URI.open(url).read
     word_info = JSON.parse(word_serialized)
-    
-    if word_info[:found]
+    @comment = "invalid"
+    # check if word is valid
+    if word_info["found"]
       @comment = "valid"     
-      # score
+      # score calculation
       @time_diff = (Time.now - Time.parse(params[:time]))
       @score = (5 + @word.length + (10 - @time_diff)).round
-    else
-      @comment = "invalid"   
     end
     # raise
   end
