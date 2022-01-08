@@ -2,6 +2,7 @@ require 'json'
 require 'open-uri'
 
 class GamesController < ApplicationController
+
   def new
     alphabets = ("A".."Z").to_a
     @time_new = Time.now
@@ -34,6 +35,8 @@ class GamesController < ApplicationController
       # score calculation
       @time_diff = (Time.now - Time.parse(params[:time]))
       @score = (5 + @word.length + (10 - @time_diff)).round
+      @score += cookies[:score].to_i unless cookies[:score].nil?
+      cookies[:score] = @score       
     end
     # raise
   end
